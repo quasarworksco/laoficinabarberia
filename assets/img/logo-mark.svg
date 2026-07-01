@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 400" role="img" aria-label="Poste de barbería, logo de La Oficina Barbería">
+  <defs>
+    <pattern id="poleStripesMark" patternUnits="userSpaceOnUse" width="46" height="46" patternTransform="rotate(45)">
+      <rect width="46" height="46" fill="#f2f2f2"/>
+      <rect width="16" height="46" fill="#d94141"/>
+      <rect x="30" width="16" height="46" fill="#2f5aa8"/>
+    </pattern>
+    <linearGradient id="goldMark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e3c374"/>
+      <stop offset="100%" stop-color="#a9822f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="90" y="330" width="60" height="18" rx="6" fill="url(#goldMark)"/>
+  <rect x="105" y="300" width="30" height="34" fill="url(#goldMark)"/>
+
+  <rect x="70" y="70" width="100" height="270" rx="50" fill="url(#poleStripesMark)" stroke="#0d0d0d" stroke-width="4"/>
+
+  <ellipse cx="120" cy="70" rx="58" ry="24" fill="url(#goldMark)" stroke="#0d0d0d" stroke-width="4"/>
+  <ellipse cx="120" cy="340" rx="58" ry="24" fill="url(#goldMark)" stroke="#0d0d0d" stroke-width="4"/>
+
+  <circle cx="120" cy="34" r="24" fill="url(#goldMark)" stroke="#0d0d0d" stroke-width="4"/>
+</svg>

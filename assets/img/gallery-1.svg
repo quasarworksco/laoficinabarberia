@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Ilustración de un poste de barbería clásico">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#242424"/>
+      <stop offset="100%" stop-color="#101010"/>
+    </radialGradient>
+    <pattern id="poleStripes" patternUnits="userSpaceOnUse" width="70" height="70" patternTransform="rotate(45)">
+      <rect width="70" height="70" fill="#f2f2f2"/>
+      <rect width="24" height="70" fill="#d94141"/>
+      <rect x="46" width="24" height="70" fill="#2f5aa8"/>
+    </pattern>
+    <linearGradient id="gold1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e3c374"/>
+      <stop offset="100%" stop-color="#a9822f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg1)"/>
+  <circle cx="1050" cy="90" r="220" fill="#c9a24b" opacity="0.06"/>
+  <circle cx="120" cy="600" r="180" fill="#c9a24b" opacity="0.06"/>
+
+  <!-- stand base -->
+  <rect x="555" y="540" width="90" height="26" rx="8" fill="url(#gold1)"/>
+  <rect x="580" y="500" width="40" height="46" fill="url(#gold1)"/>
+
+  <!-- pole body -->
+  <rect x="540" y="150" width="120" height="360" rx="60" fill="url(#poleStripes)" stroke="#0d0d0d" stroke-width="4"/>
+
+  <!-- caps -->
+  <ellipse cx="600" cy="150" rx="70" ry="30" fill="url(#gold1)"/>
+  <ellipse cx="600" cy="150" rx="70" ry="30" fill="none" stroke="#0d0d0d" stroke-width="4"/>
+  <ellipse cx="600" cy="500" rx="70" ry="30" fill="url(#gold1)"/>
+  <ellipse cx="600" cy="500" rx="70" ry="30" fill="none" stroke="#0d0d0d" stroke-width="4"/>
+
+  <!-- top knob -->
+  <circle cx="600" cy="110" r="28" fill="url(#gold1)" stroke="#0d0d0d" stroke-width="4"/>
+</svg>
