@@ -5,12 +5,15 @@ Sitio web para agendamiento de citas de La Oficina Barbería, con landing page p
 ## Estructura
 
 ```
-index.html              Landing page (servicios, precios y formulario de citas)
+index.html              Landing page (servicios, suscripciones, galería y formulario de citas)
 admin/index.html         Panel administrativo (citas del día + métricas)
 assets/css/style.css     Estilos de la landing (compartidos con el admin)
-assets/js/config.js      Configuración del sitio: WhatsApp, horario y precios
-assets/js/firebase-config.js  Credenciales de Firebase (completar antes de usar)
-assets/js/app.js         Lógica de la landing (formulario, disponibilidad, WhatsApp)
+assets/js/config.js      Configuración del sitio: WhatsApp, horario, precios y suscripciones
+assets/js/firebase-config.js  Credenciales de Firebase
+assets/js/app.js         Lógica del formulario de citas (disponibilidad, WhatsApp)
+assets/js/subscriptions.js  Botones de suscripción -> WhatsApp
+assets/js/nav.js         Menú hamburguesa en móvil
+assets/js/carousel.js    Slider de imágenes de la galería
 admin/css/admin.css      Estilos propios del panel admin
 admin/js/admin.js        Lógica del panel admin (tiempo real con Firestore)
 firestore.rules          Reglas de seguridad sugeridas para Firestore
@@ -30,11 +33,12 @@ Es un sitio 100% estático (HTML + JS con módulos ES + Firebase SDK vía CDN). 
 
 ### 2. WhatsApp y horario
 
-Edita `assets/js/config.js`:
+Configurado en `assets/js/config.js`:
 
-- `WHATSAPP_NUMBER`: número de WhatsApp de la barbería en formato internacional sin `+` (ej: `573001234567`).
-- `BUSINESS_HOURS`: horario de atención y duración de cada cita (por defecto Lun-Sáb 9:00am-7:00pm, cada 30 min).
-- `SERVICES`: nombre y precio de cada servicio (Corte $20.000, Barba $10.000, Corte + Barba $30.000).
+- `WHATSAPP_NUMBER`: `573232821398` (+57 323 2821398).
+- `BUSINESS_HOURS`: todos los días, 9:00am-7:00pm, citas cada 30 min.
+- `SERVICES`: Corte $20.000, Barba $10.000, Corte + Barba $30.000.
+- `SUBSCRIPTIONS`: planes de suscripción para clientes frecuentes — 3 meses $200.000, 6 meses $450.000, 9 meses $660.000.
 
 ## Cómo funciona
 
@@ -42,6 +46,7 @@ Edita `assets/js/config.js`:
 - El cliente elige servicio, fecha y hora (solo se muestran horas dentro del horario de atención que aún no estén ocupadas ese día).
 - Al enviar el formulario se crea un documento en la colección `citas` de Firestore con estado `pendiente`.
 - Inmediatamente se abre WhatsApp (`wa.me`) con un mensaje prellenado hacia el número de la barbería, para que el cliente confirme la cita.
+- En la sección "Suscripciones", cada plan tiene un botón que abre WhatsApp con un mensaje prellenado de interés (no crea una cita en Firestore, es solo un contacto directo).
 
 **Admin (`admin/index.html`)**
 - Muestra en tiempo real las citas del día seleccionado (por defecto, hoy).

@@ -197,6 +197,17 @@ a {
   color: #1a1a1a;
 }
 
+.btn--outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.btn--outline:hover {
+  background: var(--gold);
+  color: #1a1a1a;
+}
+
 .btn--primary:hover {
   background: var(--gold-dark);
   transform: translateY(-1px);
@@ -271,11 +282,27 @@ a {
   margin: 0;
 }
 
-/* Galería / Slider */
-.galeria {
+.card .btn {
+  margin-top: 20px;
+}
+
+/* Suscripciones */
+.suscripciones {
   padding: 70px 0;
   background: var(--bg-alt);
   border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+}
+
+.suscripciones__intro {
+  text-align: center;
+  color: var(--text-muted);
+  margin: -20px 0 40px;
+}
+
+/* Galería / Slider */
+.galeria {
+  padding: 70px 0;
   border-bottom: 1px solid #262626;
 }
 

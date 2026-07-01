@@ -42,6 +42,7 @@
 
       <nav class="nav" id="nav">
         <a href="#servicios">Servicios</a>
+        <a href="#suscripciones">Suscripciones</a>
         <a href="#galeria">Galería</a>
         <a href="#agenda">Agendar</a>
         <a href="#contacto">Contacto</a>
@@ -77,6 +78,34 @@
             <h3>Corte + Barba</h3>
             <p class="card__precio">$30.000</p>
             <p class="card__desc">El combo completo para salir listo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="suscripciones" class="suscripciones">
+      <div class="container">
+        <h2 class="section-title">Suscripciones</h2>
+        <p class="suscripciones__intro">Ideal para clientes frecuentes: paga por adelantado y ahorra.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>3 meses</h3>
+            <p class="card__precio">$200.000</p>
+            <p class="card__desc">Plan de suscripción por 3 meses.</p>
+            <button type="button" class="btn btn--outline btn--block" data-plan="meses3">Quiero suscribirme</button>
+          </article>
+          <article class="card card--highlight">
+            <span class="card__badge">Mejor ahorro</span>
+            <h3>6 meses</h3>
+            <p class="card__precio">$450.000</p>
+            <p class="card__desc">Plan de suscripción por 6 meses.</p>
+            <button type="button" class="btn btn--outline btn--block" data-plan="meses6">Quiero suscribirme</button>
+          </article>
+          <article class="card">
+            <h3>9 meses</h3>
+            <p class="card__precio">$660.000</p>
+            <p class="card__desc">Plan de suscripción por 9 meses.</p>
+            <button type="button" class="btn btn--outline btn--block" data-plan="meses9">Quiero suscribirme</button>
           </article>
         </div>
       </div>
@@ -123,7 +152,7 @@
           <h2 class="section-title">Agenda tu cita</h2>
           <p>Completa el formulario y te enviaremos la confirmación por WhatsApp.</p>
           <ul class="agenda__horario">
-            <li><strong>Horario:</strong> Lunes a Sábado</li>
+            <li><strong>Horario:</strong> Todos los días</li>
             <li><strong>Atención:</strong> 9:00 a.m. – 7:00 p.m.</li>
           </ul>
         </div>
@@ -181,6 +210,7 @@
 
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/carousel.js" defer></script>
+  <script type="module" src="assets/js/subscriptions.js"></script>
   <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
