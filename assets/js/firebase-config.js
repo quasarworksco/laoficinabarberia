@@ -5,12 +5,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "REEMPLAZA_TU_API_KEY",
-  authDomain: "REEMPLAZA_TU_PROYECTO.firebaseapp.com",
-  projectId: "REEMPLAZA_TU_PROYECTO_ID",
-  storageBucket: "REEMPLAZA_TU_PROYECTO.appspot.com",
-  messagingSenderId: "REEMPLAZA_TU_SENDER_ID",
-  appId: "REEMPLAZA_TU_APP_ID",
+  apiKey: "AIzaSyC4G6Mhcl0v_BD9T-kDaWxzBflab2l_238",
+  authDomain: "laoficinabarberia-f9116.firebaseapp.com",
+  projectId: "laoficinabarberia-f9116",
+  storageBucket: "laoficinabarberia-f9116.firebasestorage.app",
+  messagingSenderId: "2201088717",
+  appId: "1:2201088717:web:acc7bc624765f7a6f7af84",
 };
 
 const app = initializeApp(firebaseConfig);
