@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /citas/{citaId} {
+      // Cualquier visitante puede crear una cita (formulario público) y leer
+      // las citas (necesario para calcular horas disponibles y para el panel admin).
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(
+                      ['nombre', 'telefono', 'servicio', 'servicioLabel', 'precio', 'fecha', 'hora', 'estado']
+                    )
+                    && request.resource.data.estado == 'pendiente';
+
+      // Actualizar (marcar completada/cancelada) y eliminar quedan abiertos porque
+      // el panel /admin no tiene autenticación (decisión tomada en el setup inicial).
+      // ANTES DE PRODUCCIÓN: agrega Firebase Authentication y cambia esto a
+      // "allow update, delete: if request.auth != null;"
+      allow update, delete: if true;
+    }
+  }
+}
