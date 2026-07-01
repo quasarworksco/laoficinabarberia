@@ -32,7 +32,7 @@ function generarHorarios() {
   const slots = [];
   let current = startH * 60 + startM;
   const end = endH * 60 + endM;
-  while (current < end) {
+  while (current <= end) {
     const h = Math.floor(current / 60);
     const m = current % 60;
     slots.push(`${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`);

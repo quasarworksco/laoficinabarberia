@@ -9,9 +9,9 @@ export const CITAS_COLLECTION = "citas";
 
 // Horario de atención
 export const BUSINESS_HOURS = {
-  start: "09:00",
-  end: "19:00",
-  slotMinutes: 30,
+  start: "09:00", // primer turno
+  end: "21:00", // último turno (el local cierra una hora después, a las 10:00 p.m.)
+  slotMinutes: 60,
   // 0 = domingo, 1 = lunes ... 6 = sábado
   openDays: [0, 1, 2, 3, 4, 5, 6],
 };
