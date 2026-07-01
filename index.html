@@ -35,7 +35,12 @@
   <header class="header">
     <div class="container header__inner">
       <a href="#top" class="logo">LA OFICINA <span>BARBERÍA</span></a>
-      <nav class="nav">
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
         <a href="#servicios">Servicios</a>
         <a href="#galeria">Galería</a>
         <a href="#agenda">Agendar</a>
@@ -174,6 +179,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/carousel.js" defer></script>
   <script type="module" src="assets/js/app.js"></script>
 </body>
