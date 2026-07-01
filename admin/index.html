@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin | La Oficina Barbería</title>
+  <meta name="theme-color" content="#121212" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">LA OFICINA <span>BARBERÍA</span></a>
+      <span class="admin-tag">Panel Admin</span>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+      <div class="admin-toolbar">
+        <div class="form-group">
+          <label for="fecha-filtro">Ver citas del día</label>
+          <input type="date" id="fecha-filtro" />
+        </div>
+        <button id="btn-hoy" class="btn btn--ghost">Hoy</button>
+      </div>
+
+      <section class="metrics">
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-total">0</span>
+          <span class="metric-card__label">Citas del día</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-ingresos">$0</span>
+          <span class="metric-card__label">Ingresos estimados</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-completadas">0</span>
+          <span class="metric-card__label">Completadas</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-pendientes">0</span>
+          <span class="metric-card__label">Pendientes</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-cortes">0</span>
+          <span class="metric-card__label">Cortes</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-barbas">0</span>
+          <span class="metric-card__label">Barbas</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card__value" id="m-combos">0</span>
+          <span class="metric-card__label">Corte + Barba</span>
+        </div>
+        <div class="metric-card metric-card--highlight">
+          <span class="metric-card__value" id="m-proxima">--:--</span>
+          <span class="metric-card__label">Próxima cita</span>
+        </div>
+      </section>
+
+      <section class="citas-section">
+        <h2 class="section-title section-title--left">Citas del día</h2>
+        <div class="citas-table-wrapper">
+          <table class="citas-table">
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Cliente</th>
+                <th>Teléfono</th>
+                <th>Servicio</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="citas-tbody">
+              <tr>
+                <td colspan="7" class="citas-empty">Cargando citas...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
