@@ -517,6 +517,26 @@ a {
   font-size: 0.9rem;
 }
 
+.footer p {
+  margin: 0 0 8px;
+}
+
+.footer p:first-child {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.footer a {
+  color: var(--gold);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 .footer__admin {
   margin-top: 12px;
 }
