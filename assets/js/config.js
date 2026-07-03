@@ -20,7 +20,7 @@ export const BUSINESS_HOURS = {
 export const SERVICES = {
   corte: { label: "Corte", precio: 20000 },
   barba: { label: "Barba", precio: 10000 },
-  corte_barba: { label: "Corte + Barba", precio: 30000 },
+  corte_barba: { label: "Corte + Barba", precio: 25000 },
 };
 
 // Planes de suscripción para clientes frecuentes (COP)
