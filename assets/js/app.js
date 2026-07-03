@@ -172,6 +172,13 @@ form.addEventListener("submit", async (e) => {
   btnAgendar.disabled = true;
   btnAgendar.textContent = "Agendando...";
 
+  // Se abre la pestaña de WhatsApp ya (vacía) mientras la cita se guarda, porque
+  // algunos navegadores (sobre todo Safari/iOS) bloquean window.open si ocurre
+  // después de un await: al no verse como resultado directo del clic del usuario,
+  // lo tratan como pop-up no solicitado. Abriéndola aquí, todavía dentro del mismo
+  // gesto de clic, y navegándola después evitamos ese bloqueo.
+  const whatsappTab = window.open("", "_blank");
+
   try {
     const q = query(
       collection(db, CITAS_COLLECTION),
@@ -181,6 +188,7 @@ form.addEventListener("submit", async (e) => {
     );
     const existentes = await getDocs(q);
     if (!existentes.empty) {
+      if (whatsappTab) whatsappTab.close();
       setMsg("Ese horario ya fue reservado, por favor elige otra hora.", "error");
       await actualizarHorasDisponibles();
       return;
@@ -208,11 +216,18 @@ form.addEventListener("submit", async (e) => {
       fecha,
       hora,
     });
-    window.open(url, "_blank");
+
+    if (whatsappTab) {
+      whatsappTab.location.href = url;
+    } else {
+      // El navegador bloqueó incluso la pestaña vacía; se intenta abrir directo.
+      window.open(url, "_blank");
+    }
 
     form.reset();
     await actualizarHorasDisponibles();
   } catch (err) {
+    if (whatsappTab) whatsappTab.close();
     console.error(err);
     setMsg("Ocurrió un error al agendar. Intenta de nuevo.", "error");
   } finally {
